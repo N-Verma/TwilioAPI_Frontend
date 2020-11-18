@@ -35,7 +35,7 @@ export const Message=()=>{
         }
         formData = formData.join("&");
         axios
-          .post("http://localhost:4000/sendmsg", formData)
+          .post("https://twilioapibackend.herokuapp.com/sendmsg", formData)
           .then((res) => {console.log(res.data)
             setTo("")
             setMsg("")

@@ -1,6 +1,8 @@
 import React,{useContext} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {List,ListItem,ListItemText,AppBar,Toolbar,Button,Box} from '@material-ui/core';
+import LockIcon from '@material-ui/icons/Lock';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import { Link } from 'react-router-dom';
 import {UserContext} from '../Firebase/context'
 import {logout} from '../Firebase/firebase'
@@ -35,8 +37,10 @@ const useStyles = makeStyles((theme) => ({
     },
     user:{
         color:"black",
+    },
+    login:{
+        textDecoration:"none",
     }
-    
   }));
 
 const Navwithoutauth=()=>{
@@ -67,7 +71,14 @@ const Navwithoutauth=()=>{
                 </List>
                 <List>
                     <ListItem>
-                        <Button><Link className={classes.login} to='/login'>Log In</Link></Button>
+                        <Box mr={8} display="flex" justifyContent="center" alignItems="center">
+                        <LockIcon size={"small"} style={{color:"orange"}} />
+                        <Button><Link className={classes.login} to='/login'>
+                                Log In 
+                            </Link>
+                        </Button>
+                        <ArrowForwardIcon/> 
+                        </Box>
                     </ListItem>
                 </List>
             </Toolbar>

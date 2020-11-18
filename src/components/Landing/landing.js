@@ -1,7 +1,7 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
 import {Grid,Button,Typography,Box} from '@material-ui/core';
-
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 const style = makeStyles((theme)=>({
     jumbo:{
         fontSize:"35px",
@@ -61,12 +61,12 @@ and scale recurring revenue.</Typography>
       >
         <Box>
           <Button size="large" variant="contained" className={classes.demoButton}>
-            Schedule a Demo 
+            Schedule a Demo   <ArrowForwardIcon size="small"/>
           </Button>
         </Box>
         <Box>
           <Button className={classes.loginButton} size="large" variant="outlined" color="primary">
-            Sign up for free
+            Sign up for free   <ArrowForwardIcon size="small"/>
           </Button>
         </Box>
       </Box>
