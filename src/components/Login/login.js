@@ -1,8 +1,8 @@
 import React,{useContext, useEffect, useState} from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import {Grid,Paper,Button,TextField,FormControl,InputAdornment,Box} from '@material-ui/core';
-import {AccountCircle, BlurCircular} from '@material-ui/icons';
-import { Redirect } from 'react-router-dom';
+import {Button,Box} from '@material-ui/core';
+//import {AccountCircle, BlurCircular} from '@material-ui/icons';
+//import { Redirect } from 'react-router-dom';
 import {signInWithGoogle} from '../Firebase/firebase'
 import {UserContext} from '../Firebase/context'
 

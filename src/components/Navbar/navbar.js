@@ -4,7 +4,7 @@ import {List,ListItem,ListItemText,AppBar,Toolbar,Button,Box} from '@material-ui
 import { Link } from 'react-router-dom';
 import {UserContext} from '../Firebase/context'
 import {logout} from '../Firebase/firebase'
-import {Redirect,withRouter} from 'react-router-dom'
+import {Redirect} from 'react-router-dom'
 const useStyles = makeStyles((theme) => ({
     bar:{
         backgroundColor:"white",

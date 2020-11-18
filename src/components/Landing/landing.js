@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import {Grid,Paper,Button,Typography,Box} from '@material-ui/core';
+import {Grid,Button,Typography,Box} from '@material-ui/core';
 
 const style = makeStyles((theme)=>({
     jumbo:{
