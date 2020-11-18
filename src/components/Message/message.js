@@ -34,11 +34,14 @@ export const Message=()=>{
           formData.push(encodedKey + "=" + encodedValue);
         }
         formData = formData.join("&");
+        const headers = {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "https://twilioapifrontend.herokuapp.com/"
+        };
         axios
-          .post("https://twilioapibackend.herokuapp.com/sendmsg", formData)
+          .post("https://twilioapibackend.herokuapp.com/sendmsg", formData,{headers : headers})
           .then((res) => {console.log(res.data)
-            setTo("")
-            setMsg("")
+            
         });
         
     }
