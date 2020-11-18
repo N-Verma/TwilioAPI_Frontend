@@ -1,6 +1,7 @@
 import React,{useState} from 'react'
 import {TextField,FormControl,Button,Box} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
+import Alert from '@material-ui/lab/Alert';
 import axios from 'axios'
 const style= makeStyles((theme)=>({
     root:{
@@ -36,13 +37,17 @@ export const Message=()=>{
         formData = formData.join("&");
         const headers = {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "https://twilioapifrontend.herokuapp.com/"
+            "Access-Control-Allow-Origin": "*"
         };
+        try{
         axios
           .post("https://twilioapibackend.herokuapp.com/sendmsg", formData,{headers : headers})
           .then((res) => {console.log(res.data)
-            
+            return(<Alert severity="success">Message Send</Alert>)
         });
+        }catch(error){
+            return(<Alert severity="error">Message not Send</Alert>)
+        }
         
     }
     
