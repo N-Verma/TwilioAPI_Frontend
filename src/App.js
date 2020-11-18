@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import {Nav} from './components/Navbar/navbar'
+import { BrowserRouter as Router,Route } from 'react-router-dom';
+import {Login} from './components/Login/login';
+import {Landing} from './components/Landing/landing'
+import {Message} from './components/Message/message'
+import UserProvider from './components/Firebase/context'
+const App=()=>{
+  return(
+    <UserProvider>
+      <Router>
+        <Nav/>
+        <Route exact path="/" component={Landing}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/message" component={Message}/>
+      </Router>
+    </UserProvider>
+  )
 }
 
-export default App;
+export {App}
