@@ -43,8 +43,12 @@ export const Message=()=>{
         try{
         axios
           .post("http://localhost:4000/sendmsg", formData)
-          .then((res) => {console.log(res.data)
-            return(<Alert severity="success">Message Send</Alert>)
+          .then((res) => {
+              if(res.status===200){
+                  return(<Alert severity="success">Message Send</Alert>)
+              }else{
+                  return(<Alert severity="error">Message not Send</Alert>)
+              }
         });
         }catch(error){
             return(<Alert severity="error">Message not Send</Alert>)
