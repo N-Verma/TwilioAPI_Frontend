@@ -1,5 +1,6 @@
 {
   "name": "socialmedia",
+  "proxy":"https://twilioapibackend.herokuapp.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
